@@ -1,3 +1,6 @@
 [submodule "esp8266-siobridge"]
 	path = esp8266-siobridge
 	url = git@github.com:PripyatAutomations/esp8266-siobridge.git
+[submodule "chibios"]
+	path = chibios
+	url = https://github.com/ChibiOS/ChibiOS.git
