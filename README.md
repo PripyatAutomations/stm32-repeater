@@ -35,11 +35,11 @@ Implement protocol between stm32 and esp8266 for additional functions:
 
 
 
-ESP8266-sio bridge
-------------------
+ESP8266-siobridge
+-----------------
 For now this requires the cursed arduino IDE.. Will fix soon!
 
-Run esp8266-sio/install.sh to install Arduino IDE addon for flash upload
+Run esp8266-siobridge/install.sh to install Arduino IDE addon for flash upload
 
 Build + upload.
 
@@ -47,7 +47,7 @@ Click Tools >> ESP8266 Sketch Data Upload and do the needful.
 
 Open a serial console and press reset button.
 
-esp8266-sio will wait 5 seconds from reset/power on before beginning
+esp8266-siobridge will wait 5 seconds from reset/power on before beginning
 operation.
 
 This is to give the user time to catch logging messages.
