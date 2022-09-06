@@ -1,6 +1,9 @@
 /*
  * Thread for audio recording (for DTMF decoding)
  *
+ * Here we record samples into a circular buffer to be collected by other threads
+ *
+ * This is mainly used for DTMF detection
  */
 #include "repeater.h"
 

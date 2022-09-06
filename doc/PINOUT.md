@@ -15,8 +15,8 @@ Header Pins
 6
 7
 8
-9	* SIO_RX		Serial RX from esp8266
-10	* SIO_TX		Serial TX to esp8266
+9	* SIO_RX		Serial RX from esp8266 (D4/17)
+10	* SIO_TX		Serial TX to esp8266 (D3/18)
 11	RST			Ground to reset stm32
 12	
 13	+5V			+5V to power esp8266
