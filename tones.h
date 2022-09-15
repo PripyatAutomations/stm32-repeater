@@ -12,7 +12,9 @@ enum NoteWavetype {
 /* Allow making an array of notes to play for tunes */
 typedef struct Note Note;
 /* Use freq: -1 for silence */
+/* If delay is 0, play sequentially using len to time it */
 struct Note {
+    unsigned int delay;		/* offset from beginning of sequence to now */
     unsigned int len;
     int freq;
     int volume;			/* volume */
