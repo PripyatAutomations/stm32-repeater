@@ -1,7 +1,7 @@
 #include "repeater.h"
 
 void update_leds(void) {
-// PAL_MODE_OUTPUT_OPENDRAIN
+   // PAL_MODE_OUTPUT_OPENDRAIN
    if (pin_tx_led != 0) {
       if (st_tx_ptt) {
          palSetLine(pin_tx_led);

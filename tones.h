@@ -2,12 +2,21 @@
 #define	_REPEATER_tones_h
 #include "notes.h"
 
+typedef enum NoteWavetype NoteWavetype;
+enum NoteWavetype {
+    WAVE_SINE = 0,
+    WAVE_SQUARE,
+    WAVE_TRIANGLE
+};
+
 /* Allow making an array of notes to play for tunes */
 typedef struct Note Note;
 /* Use freq: -1 for silence */
 struct Note {
     unsigned int len;
     int freq;
+    int volume;			/* volume */
+    NoteWavetype shape;
 };
 
 extern void tone_start(Note *np);
