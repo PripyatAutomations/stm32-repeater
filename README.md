@@ -37,7 +37,7 @@ Implement protocol between stm32 and esp8266 for additional functions:
 
 ESP8266-siobridge
 -----------------
-For now this requires the cursed arduino IDE.. Will fix soon!
+This should build both from cli and in Arduino IDE.
 
 Run esp8266-siobridge/install.sh to install Arduino IDE addon for flash upload
 
