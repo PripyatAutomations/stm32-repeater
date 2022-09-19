@@ -33,7 +33,12 @@ bool clocksync_set_rtc(systimestamp_t ts) {
 
 bool clocksync_set_rtc_s(const char *timestr) {
    systimestamp_t new_ts = clocksync_parse_ts(timestr);
-   return clocksync_set_rtc(new_ts);
+
+   if (new_ts > now) {
+      now = new_ts;
+      return clocksync_set_rtc(new_ts);
+   }
+   return false;
 }
 
 /* for now we do not support reading the RTC back */
@@ -43,3 +48,7 @@ bool clocksync_rtc_to_sysclock(void) {
     return false;
 }
 
+bool clocksync_print_now(void) {
+   printf("/TIME %llu\n", now);
+   return true;
+}

@@ -14,6 +14,7 @@ static THD_FUNCTION(thr_record_fn, arg) {
    chRegSetThreadName("record");
 
    while(true) {
+      /* do stuff */
       chThdYield();
    }
 }

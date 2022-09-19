@@ -202,6 +202,7 @@ ULIBS =
 ##############################################################################
 # Common rules
 #
+MCFLAGS += -Wno-unused-parameter
 
 RULESPATH = $(CHIBIOS)/os/common/startup/ARMCMx/compilers/GCC/mk
 include $(RULESPATH)/arm-none-eabi.mk
@@ -219,7 +220,7 @@ include $(RULESPATH)/rules.mk
 # Custom rules
 ##############################################################################
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
-CFLAGS += -Wno-unused-parameter
+include $(CHIBIOS)/os/hal/lib/complex/buffered_sio/hal_buffered_sio.mk
 
 install:
 	./tools/flash.sh bin/${PROJECT}.bin

@@ -29,7 +29,7 @@ const char *callsign = DEFAULT_CALL;
 MachineState MyState = ST_OFFLINE, old_state = ST_OFFLINE;
 
 /* pin statuses */
-volatile bool st_int = false;	/* interrupt */
+bool st_int = false;	/* interrupt */
 
 /* TX killswitch */
 bool Killswitch = false;

@@ -4,9 +4,9 @@ const unsigned long pin_tx_ptt = TX_PTT_PIN;
 const unsigned long pin_tx_cor = TX_COR_PIN;
 const unsigned long pin_rx_cor = RX_COR_PIN;
 
-volatile bool st_tx_ptt = false, /* PTT */
-              st_tx_cor = false, /* COR state of TX radio */
-              st_rx_cor = false; /* COR state of RX radio */
+bool st_tx_ptt = false, /* PTT */
+     st_tx_cor = false, /* COR state of TX radio */
+     st_rx_cor = false; /* COR state of RX radio */
 
 /* Enable PTT; tail == false stops PTT immediately */
 void PTT(bool state, bool tail) {

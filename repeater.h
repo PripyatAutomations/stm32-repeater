@@ -53,14 +53,8 @@ extern const unsigned long pin_tx_tone,
                   pin_tx_cor,
                   pin_rx_cor;
 
-/* leds.c */
-extern const unsigned long pin_heartbeat_led,
-                  pin_tx_led,
-                  pin_rx_led,
-                  pin_conflict_led;
-
 /* pin statuses */
-extern volatile bool st_int,	/* interrupt */
+extern bool st_int,	/* interrupt */
               st_hang ,	/* hang timer (squelch tail) */
               st_tx_ptt,	/* PTT */
               st_tx_cor,	/* COR state of TX radio */

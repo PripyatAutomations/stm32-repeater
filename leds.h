@@ -3,14 +3,14 @@
 
 typedef struct LEDConfig ledconfig_t;
 struct LEDConfig {
-   int		*pin;
+   unsigned long *pin;
    char		*name;		/* name for the pin (11 char) */
    bool		*state;		/* pointer to current state */
 };
 
-extern const unsigned long pin_tx_led;
-extern const unsigned long pin_rx_led;
-extern const unsigned long pin_conflict_led;
-extern const unsigned long pin_heartbeat_led;
+extern unsigned long pin_tx_led;
+extern unsigned long pin_rx_led;
+extern unsigned long pin_conflict_led;
+extern unsigned long pin_heartbeat_led;
 
 #endif
