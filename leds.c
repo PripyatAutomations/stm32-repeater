@@ -1,4 +1,10 @@
 #include "repeater.h"
+#include "led_cfg.h"
+
+const unsigned long pin_tx_led = TX_LED;
+const unsigned long pin_rx_led = RX_LED;
+const unsigned long pin_conflict_led = CONFLICT_LED;
+const unsigned long pin_heartbeat_led = HEARTBEAT_LED;
 
 void update_leds(void) {
    // PAL_MODE_OUTPUT_OPENDRAIN

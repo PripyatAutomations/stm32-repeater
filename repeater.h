@@ -4,19 +4,21 @@
 #include <string.h>
 #include <sys/types.h>
 #include <stdarg.h>
+/* chibios config */
 #include "ch.h"
 #include "hal.h"
-#include <chibios/os/hal/lib/streams/chprintf.h>
 #include "config.h"
+#include <chibios/os/hal/lib/streams/chprintf.h>
+#include "clocksync.h"
+#include "console.h"
 #include "events.h"
 #include "eeprom.h"
-#include "console.h"
+#include "leds.h"
 #include "morse.h"
 #include "pcm5102.h"
+#include "statistics.h"
 #include "tones.h"
 #include "totp.h"
-#include "clocksync.h"
-#include "statistics.h"
 
 #define IS_INDEXABLE(arg) (sizeof(arg[0]))
 #define IS_ARRAY(arg) (IS_INDEXABLE(arg) && (((void *) &arg) == ((void *) arg)))
@@ -45,10 +47,14 @@ extern systimestamp_t tm_start,
        tm_cooldown_expire,
        now;
 
+/* ptt.c */
 extern const unsigned long pin_tx_tone,
                   pin_tx_ptt,
                   pin_tx_cor,
-                  pin_rx_cor,
+                  pin_rx_cor;
+
+/* leds.c */
+extern const unsigned long pin_heartbeat_led,
                   pin_tx_led,
                   pin_rx_led,
                   pin_conflict_led;

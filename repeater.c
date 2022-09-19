@@ -15,10 +15,10 @@
 
 systimestamp_t now = 0;
 systimestamp_t tm_start,
-       tm_next_id,		/* when should we ID next? */
-       tm_cooldown = DEFAULT_COOLDOWN, /* TOT cooldown */
-       tm_tail = DEFAULT_TAIL,  /* hold PTT a bit */
-       tm_tot_expire,		/* when does TOT expire? */
+       tm_next_id,			/* when should we ID next? */
+       tm_cooldown = DEFAULT_COOLDOWN,  /* TOT cooldown */
+       tm_tail = DEFAULT_TAIL,  	/* hold PTT a bit */
+       tm_tot_expire,			/* when does TOT expire? */
        tm_tail_expire,
        tm_tot = DEFAULT_TOT,
        tm_cooldown_expire;

@@ -3,9 +3,6 @@
 const unsigned long pin_tx_ptt = TX_PTT_PIN;
 const unsigned long pin_tx_cor = TX_COR_PIN;
 const unsigned long pin_rx_cor = RX_COR_PIN;
-const unsigned long pin_tx_led = TX_LED;
-const unsigned long pin_rx_led = RX_LED;
-const unsigned long pin_conflict_led = CONFLICT_LED;
 
 volatile bool st_tx_ptt = false, /* PTT */
               st_tx_cor = false, /* COR state of TX radio */

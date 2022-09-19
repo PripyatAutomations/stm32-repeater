@@ -1,7 +1,7 @@
 /*
  * config.h: DO NOT EDIT! AUTO-GENERATED!
  *
- * Edit repeater.con and run ./configure instead!
+ * Edit repeater.conf and run ./configure instead!
  */
 #if	!defined(_REPEATER_config_h)
 #define	_REPEATER_config_h
@@ -23,6 +23,7 @@
 #define	TX_LED			PAL_LINE(GPIOB, 9U)	/* when we are keying transmitter */
 #define	RX_LED			PAL_LINE(GPIOB, 8U)	/* when we hear on our input freq */
 #define	CONFLICT_LED		PAL_LINE(GPIOB, 10U)	/* show when someone TXes on our output */
+#define	HEARTBEAT_LED		PAL_LINE(GPIOB, 13U)	/* heartbeart light */
 
 /* ********* */
 #define	DEFAULT_TOT		160
@@ -40,8 +41,8 @@
 #define	DEFAULT_ID_QUIET_ENABLE	true		/* enable quiet times? */
 
 /* 'security' */
-#define	DEFAULT_PASSWORD	4321		/* default admin password */
-#define	DEFAULT_PASSWORD_SHUTDOWN 1234		/* default shutdown password */
+#define	DEFAULT_PASSWORD	"4321"		/* default admin password */
+#define	DEFAULT_PASSWORD_SHUTDOWN "12345678"	/* default shutdown password */
 #define	DEFAULT_TOTP_SEED	0xc99a8ffa	/* seed for TOTP system */
 #define	DEFAULT_TOTP_LIFETIME	60		/* TOTP lifetime (seconds) */
 
