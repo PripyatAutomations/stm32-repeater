@@ -1,10 +1,12 @@
+#if	!defined(_REPEATER_repeater_h)
+#define	_REPEATER_repeater_h
+
 #include <stdio.h>
 #include <stdbool.h>
 #include <time.h>
 #include <string.h>
 #include <sys/types.h>
 #include <stdarg.h>
-/* chibios config */
 #include "ch.h"
 #include "hal.h"
 #include "config.h"
@@ -55,10 +57,10 @@ extern const unsigned long pin_tx_tone,
 
 /* pin statuses */
 extern bool st_int,	/* interrupt */
-              st_hang ,	/* hang timer (squelch tail) */
-              st_tx_ptt,	/* PTT */
-              st_tx_cor,	/* COR state of TX radio */
-              st_rx_cor;	/* COR state of RX radio */
+            st_hang ,	/* hang timer (squelch tail) */
+            st_tx_ptt,	/* PTT */
+            st_tx_cor,	/* COR state of TX radio */
+            st_rx_cor;	/* COR state of RX radio */
 
 
 extern MachineState MyState;
@@ -84,3 +86,5 @@ extern void update_leds(void);
 
 extern void rx_cor_change(void);
 extern void tx_cor_change(void);
+
+#endif
