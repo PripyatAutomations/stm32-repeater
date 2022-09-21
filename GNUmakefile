@@ -1,4 +1,4 @@
-world: all siobridge-all
+world: submodule-init all siobridge-all bootloader-all
 
 include config.mk
 
@@ -229,7 +229,7 @@ ${src}: $(wildcard *.h)
 
 CLEAN_RULE_HOOK: extra-clean
 
-extra-clean: siobridge-clean
+extra-clean: siobridge-clean bootloader-clean
 	rm -rf build/ bin/
 
 .PHONY: clean extra-clean install
@@ -237,6 +237,16 @@ extra-clean: siobridge-clean
 git-init:
 	git submodule init
 	git submodule update
+
+bootloader-all:
+ifeq (${USE_SIOBRIDGE}, y)
+	${MAKE} -C bootloader all
+endif
+
+bootloader-clean:
+ifeq (${USE_SIOBRIDGE}, y)
+	${MAKE} -C bootloader clean
+endif
 
 siobridge-all:
 ifeq (${USE_SIOBRIDGE}, y)
@@ -247,3 +257,9 @@ siobridge-clean:
 ifeq (${USE_SIOBRIDGE}, y)
 	${MAKE} -C esp8266-siobridge clean
 endif
+
+submodule-init: esp8266-siobridge/GNUmakefile
+
+esp8266-siobridge/GNUmakefile:
+	git submodule init
+	git submodule pull

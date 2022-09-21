@@ -11,3 +11,7 @@ Once you have build the application, then run the application like below.
 		
 		example:
 			.\etx_ota_app.exe 8 ..\..\Application\Debug\Blinky.bin
+
+Original Source:
+	https://embetronicx.com/tutorials/microcontrollers/stm32/bootloader/stm32-bootloader-uart-stm32-bootloader-tutorial/
+	https://github.com/Embetronicx/STM32-Bootloader/
