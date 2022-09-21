@@ -124,6 +124,7 @@ CONFDIR  := ./cfg
 BUILDDIR := ./build
 DEPDIR   := ./.dep
 
+ifeq ($(CHIBIOS)/os/license/license.mk, $(wildcard ${CHIBIOS}/os/license/license.mk))
 # Licensing files.
 include $(CHIBIOS)/os/license/license.mk
 # Startup files.
@@ -221,6 +222,10 @@ include $(RULESPATH)/rules.mk
 ##############################################################################
 include $(CHIBIOS)/os/hal/lib/streams/streams.mk
 include $(CHIBIOS)/os/hal/lib/complex/buffered_sio/hal_buffered_sio.mk
+
+# endif: if exists chibiso/os/license/license.mk
+endif
+
 
 install:
 	./tools/flash.sh bin/${PROJECT}.bin
