@@ -18,6 +18,7 @@
 #include "leds.h"
 #include "morse.h"
 #include "pcm5102.h"
+#include "sha1.h"
 #include "statistics.h"
 #include "tones.h"
 #include "totp.h"
@@ -63,7 +64,7 @@ extern bool st_int,	/* interrupt */
             st_rx_cor;	/* COR state of RX radio */
 
 
-extern MachineState MyState;
+extern MachineState MyState, old_state;
 
 /******/
 extern bool Killswitch;

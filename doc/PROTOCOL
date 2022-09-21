@@ -1,0 +1,16 @@
+Status messages begin with a *
+
+Commands begin with /
+
+Commands sent to STM32 by ESP8266
+    /REBOOT
+            Restart the device
+
+    /TIME <TIMESTAMP>
+            Set the system time
+
+    /OTA
+
+Commands sent by STM32 to ESP8266
+    /TIME
+	    Request that the ESP8266 tell us the time

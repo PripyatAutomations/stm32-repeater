@@ -1,8 +1,6 @@
-world: all
+world: all siobridge-all
 
-#USE_VERBOSE_COMPILE = yes
-SIO_PORT = /dev/ttyUSB0
-#SIO_PORT = /dev/ttyACM0
+include config.mk
 
 src += clocksync.c
 src += events.c
@@ -11,6 +9,8 @@ src += morse.c
 src += pcm5102.c
 src += ptt.c
 src += repeater.c
+src += sha1.c
+src += squelch.c
 src += statistics.c
 src += tones.c
 src += totp.c
@@ -229,7 +229,7 @@ ${src}: $(wildcard *.h)
 
 CLEAN_RULE_HOOK: extra-clean
 
-extra-clean:
+extra-clean: siobridge-clean
 	rm -rf build/ bin/
 
 .PHONY: clean extra-clean install
@@ -237,3 +237,13 @@ extra-clean:
 git-init:
 	git submodule init
 	git submodule update
+
+siobridge-all:
+ifeq (${USE_SIOBRIDGE}, y)
+	${MAKE} -C esp8266-siobridge all
+endif
+
+siobridge-clean:
+ifeq (${USE_SIOBRIDGE}, y)
+	${MAKE} -C esp8266-siobridge clean
+endif
