@@ -1,4 +1,8 @@
-all: world
+all:
+
+# This is disabled for now, while we finish porting from stm32f7xx to stm32f4xx used on stm32-repeater
+#
+#all: world
 
 CC := arm-none-eabi-gcc
 LD := arm-none-eabi-ld
