@@ -267,4 +267,4 @@ submodule-init: esp8266-siobridge/GNUmakefile
 
 esp8266-siobridge/GNUmakefile:
 	git submodule init
-	git submodule pull
+	git submodule update
