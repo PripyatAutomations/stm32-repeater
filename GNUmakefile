@@ -266,5 +266,27 @@ endif
 submodule-init: esp8266-siobridge/GNUmakefile
 
 esp8266-siobridge/GNUmakefile:
+ifeq (x, x$(shell which git))
+	echo "* Please install git build-essentials and appropriate toolchains and try again..."
+	exit 1
+endif
+	echo "* Attempting to fetch git submodules"
 	git submodule init
 	git submodule update
+	echo "* Fetched submodules, restart build! (ignore errors below)"
+
+
+info:
+	@echo "repeater firmware:"
+	@arm-none-eabi-size build/repeater.elf
+	@echo ""
+	@echo "esp8266-siobridge:"
+	@xtensa-lx106-elf-size esp8266-siobridge/.build/esp8266-siobridge_d1_mini_clone/esp8266-siobridge.elf
+	@echo ""
+	@echo "bootloader:"
+ifeq (x, x$(wildcard bootloader/build/bootloader.elf))
+	@echo "* missing *"
+else
+	@arm-none-eabi-size bootloader/build/bootloader.elf
+endif
+
